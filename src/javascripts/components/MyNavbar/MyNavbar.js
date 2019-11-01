@@ -4,7 +4,8 @@ import 'firebase/auth';
 
 const authDiv = $('#auth');
 const logoutButton = $('#navbar-button-logout');
-const board = $('#board');
+const boardDiv = $('#board');
+
 
 const logoutEvent = () => {
   logoutButton.click((e) => {
@@ -13,7 +14,7 @@ const logoutEvent = () => {
       .then(() => {
         authDiv.classList.add('hide');
         logoutButton.classList.add('hide');
-        board.classList.add('hide');
+        boardDiv.classList.add('hide');
       }).catch((err) => console.error('you still logged in', err));
   });
 };
