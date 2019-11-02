@@ -1,11 +1,10 @@
 import firebase from 'firebase';
-
 import auth from './components/Auth/auth';
 import authData from './helpers/data/authData';
 import myNavbar from './components/MyNavbar/MyNavbar';
-
 import apiKeys from './helpers/apiKeys';
-
+import home from './components/home/home';
+import board from './components/boards/boards';
 import '../styles/main.scss';
 
 const init = () => {
@@ -13,6 +12,8 @@ const init = () => {
   authData.checkLoginStatus();
   auth.loginButton();
   myNavbar.logoutEvent();
+  home.homeMaker();
+  board.boardMaker();
 };
 
 init();
