@@ -7,6 +7,7 @@ import home from './components/home/home';
 import board from './components/boards/boards';
 import '../styles/main.scss';
 
+
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseKeys);
   authData.checkLoginStatus();
