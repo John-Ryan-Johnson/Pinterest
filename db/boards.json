@@ -2,14 +2,14 @@
   "board1": {
     "id": "board1",
     "name": "When you want to laugh",
-    "UID": "HY5wcGtBXzgWUAGYCNPMKs5Lx3c2",
+    "uid": "HY5wcGtBXzgWUAGYCNPMKs5Lx3c2",
     "isPrivate": true,
     "boardDescription": "Funny Quotes"
   },
   "board2": {
     "id": "board2",
     "name": "When you start your day",
-    "UID": "HY5wcGtBXzgWUAGYCNPMKs5Lx3c2",
+    "uid": "HY5wcGtBXzgWUAGYCNPMKs5Lx3c2",
     "isPrivate": true,
     "boardDescription": "Inspirational Quotes"
 
@@ -17,7 +17,7 @@
   "board3": {
     "id": "board3",
     "name": "When you feel like a smarta$$",
-    "UID": "HY5wcGtBXzgWUAGYCNPMKs5Lx3c2",
+    "uid": "HY5wcGtBXzgWUAGYCNPMKs5Lx3c2",
     "isPrivate": true,
     "boardDescription": "Sarcastic Quotes"
 

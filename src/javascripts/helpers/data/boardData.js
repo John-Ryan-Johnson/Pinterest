@@ -1,9 +1,9 @@
 import axios from 'axios';
 import apiKeys from '../apiKeys.json';
 
-const baseUrl = apiKeys.firebaseConfig.databaseURL;
+const baseUrl = apiKeys.firebaseKeys.databaseURL;
 
-const getBoard = () => new Promise((resolve, reject) => {
+const getBoards = () => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/boards.json`)
     .then((response) => {
       const demBoards = response.data;
@@ -17,4 +17,4 @@ const getBoard = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export default { getBoard };
+export default { getBoards };
