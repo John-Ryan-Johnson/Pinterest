@@ -4,8 +4,8 @@ import authData from './helpers/data/authData';
 import myNavbar from './components/MyNavbar/MyNavbar';
 import apiKeys from './helpers/apiKeys';
 import home from './components/home/home';
-import board from './components/boards/boards';
 import '../styles/main.scss';
+import board from './components/boards/boards';
 
 
 const init = () => {
@@ -14,7 +14,7 @@ const init = () => {
   auth.loginButton();
   myNavbar.logoutEvent();
   home.homeMaker();
-  board.boardMaker();
+  board.makeABoard();
 };
 
 init();
