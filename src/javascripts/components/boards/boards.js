@@ -6,6 +6,25 @@ import './boards.scss';
 import pinsData from '../../helpers/data/pinsData';
 import pinCardMaker from '../makePinCard/pinCardMaker';
 
+
+const pinCardDeleteEvent = (event) => {
+  event.preventDefault();
+  pinsData.deletePin(event.target.id)
+    .then(() => {
+      let pinBucket = '';
+      const boardId = event.target.dataset.boardid;
+      pinsData.getPins(boardId)
+        .then((pins) => {
+          pins.forEach((pin) => {
+            pinBucket += pinCardMaker.makePinCard(pin);
+          });
+          utilities.printToDom('board', pinBucket);
+        })
+        .catch((error) => console.error(error));
+    })
+    .catch((error) => console.error(error));
+};
+
 const boardEvents = () => {
   $('.board-button').click((event) => {
     const boardId = event.target.id;
@@ -32,6 +51,7 @@ const makeABoard = (uid) => {
       domString += '</div>';
       utilities.printToDom('board', domString);
       boardEvents();
+      $('#board').on('click', '.delete-button', pinCardDeleteEvent);
     })
     .catch((error) => console.error(error));
 };
