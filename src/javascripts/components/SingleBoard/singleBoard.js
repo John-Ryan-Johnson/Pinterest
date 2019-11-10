@@ -8,10 +8,11 @@ const boardCard = (board) => {
   let domString = '';
   if (getCurrentUid) {
     domString += `
-  <div class="card col-4">
-  <h4 class="card-title text-center">${board.name}</h4>
-  <p class="card-text text-center">${board.boardDescription}</p>
-  <button class="board-button" id="${board.id}">View Pins</button>
+  <div class="card col-12 mb-5">
+  <h3 class="card-title text-center">${board.name}</h3>
+  <h5 class="card-text text-center">${board.boardDescription}</h5>
+  <button class="board-button mb-2" id="${board.id}">View Pins</button>
+  <button class="delete-board mb-2" data - boardId="${board.id}" id = "${board.id}">Delete Board</button >
   </div>`;
   } else {
     domString = `
