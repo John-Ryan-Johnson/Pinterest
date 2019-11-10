@@ -43,8 +43,8 @@ const boardEvents = () => {
 const makeABoard = (uid) => {
   b.getBoards(uid)
     .then((boards) => {
-      let domString = '<h2 class="text-center">MY BOARDS</H2>';
-      domString += '<div class="d-flex flex-wrap">';
+      let domString = '<h2 class="text-center text-white">MY BOARDS</h2>';
+      domString += '<div class="col-12 d-flex flex-wrap">';
       boards.forEach((board) => {
         domString += card.boardCard(board);
       });
