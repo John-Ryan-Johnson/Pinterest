@@ -1,5 +1,4 @@
 import firebase from 'firebase/app';
-import 'firebase/auth';
 import './singleBoard.scss';
 
 
@@ -12,7 +11,8 @@ const boardCard = (board) => {
   <h3 class="card-title text-center">${board.name}</h3>
   <h5 class="card-text text-center">${board.boardDescription}</h5>
   <button class="board-button mb-2" id="${board.id}">View Pins</button>
-  <button class="delete-board mb-2" data-boardId="${board.id}" id = "${board.id}">Delete Board</button >
+  <button class="delete-board mb-2" data-boardId="${board.id}" id = "${board.id}">Delete Board</button>
+  <button type="button" class="add-pin mb-2" data-toggle="modal" data-target="#examplePinModal">Add Pin</button>
   </div>`;
   } else {
     domString = `

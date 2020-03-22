@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import utilities from '../../helpers/utilities';
 import card from '../SingleBoard/singleBoard';
 import b from '../../helpers/data/boardData';
@@ -22,6 +22,25 @@ const pinBoardDeleteEvent = (event) => {
           makeABoard(uid);
         })
         .catch((error) => console.error(error));
+    })
+    .catch((error) => console.error(error));
+};
+
+const addNewPin = (e) => {
+  e.stopImmediatePropagation();
+  const { uid } = firebase.auth().currentUser;
+  const newPin = {
+    name: $('#pin-name').val(),
+    boardId: $('.board-title')[0].id,
+    url: $('#url').val(),
+    imgUrl: $('#pin-image-url').val(),
+    uid,
+  };
+  pinsData.addNewPin(newPin)
+    .then(() => {
+      $('#exampleModal').modal('hide');
+      // eslint-disable-next-line no-use-before-define
+      makeABoard('boardId');
     })
     .catch((error) => console.error(error));
 };
@@ -60,6 +79,24 @@ const boardEvents = () => {
   });
 };
 
+const addNewBoard = (e) => {
+  e.stopImmediatePropagation();
+  const { uid } = firebase.auth().currentUser;
+  const newBoard = {
+    name: $('#board-name').val(),
+    img: $('#board-img').val(),
+    id: $('#board-id').val(),
+    uid,
+  };
+  b.addNewBoard(newBoard)
+    .then(() => {
+      $('#exampleModal').modal('hide');
+      // eslint-disable-next-line no-use-before-define
+      makeABoard();
+    })
+    .catch((error) => console.error(error));
+};
+
 const makeABoard = (uid) => {
   b.getBoards(uid)
     .then((boards) => {
@@ -73,6 +110,9 @@ const makeABoard = (uid) => {
       boardEvents();
       $('#board').on('click', '.delete-button', pinCardDeleteEvent);
       $('#board').on('click', '.delete-board', pinBoardDeleteEvent);
+      $('#boards').on('click', '.add-board', addNewBoard);
+      $('#add-new-board').click(addNewBoard);
+      $('#add-pin').click(addNewPin);
     })
     .catch((error) => console.error(error));
 };

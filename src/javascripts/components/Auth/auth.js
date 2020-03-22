@@ -1,6 +1,5 @@
-import $ from 'jquery';
 import firebase from 'firebase/app';
-import 'firebase/auth';
+import $ from 'jquery';
 
 import utilities from '../../helpers/utilities';
 

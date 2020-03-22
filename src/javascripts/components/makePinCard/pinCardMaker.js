@@ -9,7 +9,7 @@ const makePinCard = (pin) => {
       <h4 class="card-title">${pin.name}</h4>
       <p>${pin.description}</p>
       <button class="delete-button"data-boardId=${pin.boardId} id="${pin.id}">Delete</button>
-     </div>
+    </div>
   </div>
   `;
   return domString;
