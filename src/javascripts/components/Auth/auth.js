@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
-import $ from 'jquery';
+import 'firebase/auth';
 
-import utilities from '../../helpers/utilities';
+import utils from '../../helpers/utilities';
 
 const signMeIn = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -9,9 +9,8 @@ const signMeIn = () => {
 };
 
 const loginButton = () => {
-  const domString = '<button id="google-auth" class="btn btn-danger mt-2">Sign In</button>';
-
-  utilities.printToDom('auth', domString);
+  const domString = '<button class="btn btn-danger mt-3" id="google-auth">GOOGLE LOGIN</button>';
+  utils.printToDom('auth', domString);
   $('#google-auth').click(signMeIn);
 };
 

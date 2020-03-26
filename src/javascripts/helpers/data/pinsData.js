@@ -20,21 +20,4 @@ const getPins = (boardId) => new Promise((resolve, reject) => {
 
 const deletePin = (id) => axios.delete(`${baseUrl}/pins/${id}.json`);
 
-const addNewPin = (newPin) => axios.post(`${baseUrl}/pins.json`, newPin);
-
-const bothPinAndBoard = (boardId) => {
-  getPins(boardId)
-    .then((pins) => {
-      pins.forEach((pin) => {
-        deletePin(pin.id);
-      });
-    });
-};
-
-
-export default {
-  getPins,
-  deletePin,
-  addNewPin,
-  bothPinAndBoard,
-};
+export default { getPins, deletePin };

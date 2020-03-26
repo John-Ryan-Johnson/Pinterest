@@ -1,20 +1,10 @@
 import firebase from 'firebase/app';
-import $ from 'jquery';
-
-const authDiv = $('#auth');
-const logoutButton = $('#navbar-button-logout');
-const home = $('#home');
-
+import 'firebase/auth';
 
 const logoutEvent = () => {
-  logoutButton.click((e) => {
+  $('#navbar-logout-button').click((e) => {
     e.preventDefault();
-    firebase.auth().signOut()
-      .then(() => {
-        authDiv.addClass('hide');
-        logoutButton.addClass('hide');
-        home.addClass('hide');
-      }).catch((err) => console.error('you still logged in', err));
+    firebase.auth().signOut();
   });
 };
 
