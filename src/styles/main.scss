@@ -1,20 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-body{
-  background: rgb(90, 88, 88);
-  font-family: 'Open Sans', sans-serif;
-}
-
-.nav-item .btn {
-  display: inline-block;
-  text-align: center;
-  width: 150px;
-}
-
-.back {
+body {
   background: rgb(90, 88, 88);
 }
 

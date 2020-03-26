@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
@@ -10,7 +11,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: "eslint-loader",
-        options: {
+	options: {
           formatter: require('eslint/lib/cli-engine/formatters/stylish')
         }
       },
@@ -34,8 +35,8 @@ module.exports = {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { sourceMap: true, importLoaders: 1 } },
-          { loader: 'sass-loader', options: { sourceMap: true } },
+            { loader: 'css-loader', options: { sourceMap: true, importLoaders: 1 } },
+            { loader: 'sass-loader', options: { sourceMap: true } },
         ],
       },
       {
@@ -56,10 +57,14 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
     })
   ],
   output: {
-    path: __dirname + "/build",
-    filename: "bundle.js"
-  }
+		path: __dirname + "/build",
+		filename: "bundle.js"
+	}
 };
