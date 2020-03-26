@@ -1,22 +1,18 @@
 {
   "board1": {
-    "id": "board1",
     "name": "When you want to Laugh!",
-    "uid": "HY5wcGtBXzgWUAGYCNPMKs5Lx3c2",
-    "boardDescription": "Funny Quotes"
+    "description": "Funny Quotes",
+    "uid": "HY5wcGtBXzgWUAGYCNPMKs5Lx3c2"
   },
   "board2": {
-    "id": "board2",
     "name": "When you start your Day!",
-    "uid": "HY5wcGtBXzgWUAGYCNPMKs5Lx3c2",
-    "boardDescription": "Inspirational Quotes"
+    "description": "Inspirational Quotes",
+    "uid": "HY5wcGtBXzgWUAGYCNPMKs5Lx3c2"
 
   },
   "board3": {
-    "id": "board3",
     "name": "When you feel Saucy!",
-    "uid": "HY5wcGtBXzgWUAGYCNPMKs5Lx3c2",
-    "boardDescription": "Sarcastic Quotes"
-
+    "description": "Sarcastic Quotes",
+    "uid": "HY5wcGtBXzgWUAGYCNPMKs5Lx3c2"
   }
 }
