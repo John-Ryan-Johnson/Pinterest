@@ -1,8 +1,8 @@
-import util from '../../helpers/utilities';
+import util from '../../helpers/utils';
 import './home.scss';
 
 const homeMaker = () => {
-  const domString = '<h1 class="text-center text-danger">Pinterested ?</h1>';
+  const domString = '<h1 class="text-center text-danger mt-3">Are You Pinterested ?</h1>';
   util.printToDom('home', domString);
 };
 

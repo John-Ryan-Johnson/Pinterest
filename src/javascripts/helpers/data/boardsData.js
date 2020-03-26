@@ -8,9 +8,9 @@ const getBoards = () => new Promise((resolve, reject) => {
     .then((response) => {
       const demBoards = response.data;
       const boards = [];
-      Object.keys(demBoards).forEach((fbId) => {
-        demBoards[fbId].id = fbId;
-        boards.push(demBoards[fbId]);
+      Object.keys(demBoards).forEach((boardId) => {
+        demBoards[boardId].id = boardId;
+        boards.push(demBoards[boardId]);
       });
       resolve(boards);
     })
