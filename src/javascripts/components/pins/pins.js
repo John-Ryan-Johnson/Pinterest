@@ -18,11 +18,16 @@ const printPins = (e) => {
     .then((response) => {
       const pins = response;
       let domString = '';
-      domString += '<button class="btn btn-danger mt-2 ml-5" id="back-to-boards">Back To Boards</button>';
+      domString += '<button class="btn btn-danger mt-4 ml-5" id="back-to-boards">Back To Boards</button>';
       domString += '<div class="d-flex flex-wrap justify-content-center">';
       pins.forEach((pin) => {
-        domString += '<div class="card pinCard mx-auto mt-3 mb-3" style="max-width: 30rem;">';
+        domString += '<div class="row">';
+        domString += '<div class="col-lg-12">';
+        domString += '<div class="card pinCard mt-5 mb-5">';
+        domString += '<button class="btn btn-danger btn-circle btn-sm d-flex ml-auto delete-pin"><i class="fas fa-skull"></i></button>';
         domString += `<img src="${pin.imageUrl}" class="image">`;
+        domString += '</div>';
+        domString += '</div>';
         domString += '</div>';
       });
       domString += '</div>';
