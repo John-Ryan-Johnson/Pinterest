@@ -1,4 +1,18 @@
 .pinCard {
-  height: 10%;
+  margin: 1rem;
 }
+
+#back-to-boards {
+  position: sticky;
+  top: 1rem;
+  z-index: 1;
+}
+
+.delete-pin {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+
 

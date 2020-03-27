@@ -7,7 +7,7 @@ const authDiv = $('#auth');
 const homeDiv = $('#home');
 const boardsDiv = $('#boards');
 const logoutButton = $('#navbar-logout-button');
-const singleBoard = $('#single-board');
+const singleBoardView = $('#single-board');
 
 
 const checkLoginStatus = () => {
@@ -17,14 +17,14 @@ const checkLoginStatus = () => {
       homeDiv.addClass('hide');
       boardsDiv.removeClass('hide');
       logoutButton.removeClass('hide');
-      singleBoard.removeClass('hide');
+      singleBoardView.removeClass('hide');
       boardRoom.buildBoardRoom();
     } else {
       authDiv.removeClass('hide');
       homeDiv.removeClass('hide');
       boardsDiv.addClass('hide');
       logoutButton.addClass('hide');
-      singleBoard.addClass('hide');
+      singleBoardView.addClass('hide');
       home.homeMaker();
     }
   });
