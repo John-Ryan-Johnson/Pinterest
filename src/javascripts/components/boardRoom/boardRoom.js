@@ -15,7 +15,7 @@ const buildBoardRoom = () => {
       });
       domString += '</div>';
       utils.printToDom('boards', domString);
-      $('body').on('click', '.board-card', pins.showPins);
+      $('body').on('click', '.board-card', pins.printPins);
     })
     .catch((err) => console.error(err));
 };
