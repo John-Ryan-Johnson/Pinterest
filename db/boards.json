@@ -1,11 +1,13 @@
 {
   "board1": {
+    "boardId": "board1",
     "name": "When you want to Laugh!",
     "description": "Funny Quotes",
     "imgUrl": "https://cdn.pixabay.com/photo/2018/11/21/14/48/smiling-3829770_960_720.png",
     "uid": "HY5wcGtBXzgWUAGYCNPMKs5Lx3c2"
   },
   "board2": {
+    "boardId": "board2",
     "name": "When you start your Day!",
     "description": "Inspirational Quotes",
     "imgUrl": "https://cdn.pixabay.com/photo/2015/10/21/10/52/motivational-999247_960_720.jpg",
@@ -13,9 +15,17 @@
 
   },
   "board3": {
+    "boardId": "board3",
     "name": "When you feel Saucy!",
     "description": "Sarcastic Quotes",
     "imgUrl": "https://p1.pxfuel.com/preview/232/834/388/sarcasm-word-letters-sarcastic.jpg",
     "uid": "HY5wcGtBXzgWUAGYCNPMKs5Lx3c2"
-  }
+  },
+  "board4": {
+    "boardId": "board4",
+    "name": "Crazy Talk!",
+    "description": "Ludicrous Quotes",
+    "imgUrl": "https://www.publicdomainpictures.net/pictures/250000/nahled/absurd-on-autobiography.jpg",
+    "uid": "12345"
+}
 }

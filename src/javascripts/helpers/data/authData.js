@@ -13,18 +13,17 @@ const singleBoardView = $('#single-board');
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      authDiv.addClass('hide');
       homeDiv.addClass('hide');
       boardsDiv.removeClass('hide');
-      logoutButton.removeClass('hide');
       singleBoardView.removeClass('hide');
-      boardRoom.buildBoardRoom();
+      logoutButton.removeClass('hide');
+      authDiv.addClass('hide');
+      boardRoom.buildBoardRoom(user.uid);
     } else {
       authDiv.removeClass('hide');
       homeDiv.removeClass('hide');
       boardsDiv.addClass('hide');
       logoutButton.addClass('hide');
-      singleBoardView.addClass('hide');
       home.homeMaker();
     }
   });
