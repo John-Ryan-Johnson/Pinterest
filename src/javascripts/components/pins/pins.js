@@ -8,11 +8,12 @@ const printPins = (boardId) => {
     .then((pins) => {
       let domString = '';
       domString = '<h1 class="pinTitle text-center text-white mt-3">My Pins</h1>';
-      domString += '<a href="." class="btn btn-danger ml-5" id="back-to-boards">Back To Boards</a>';
-      domString += `<div class="d-flex justify-content-center" id="${boardId}">`;
+      domString += '<a href="." class="btn btn-danger" id="back-to-boards">Back To Boards</a>';
+      domString += `<div class="d-flex flex-wrap justify-content-center" id="${boardId}">`;
       pins.forEach((pin) => {
         domString += pinCard.buildPins(pin);
       });
+      domString += '</div>';
       utils.printToDom('single-board', domString);
     })
     .catch((err) => console.error('Pins not working', err));

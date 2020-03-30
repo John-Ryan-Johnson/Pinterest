@@ -10,7 +10,7 @@ const buildBoards = (board) => {
   domString += '<div class="card-body">';
   domString += `<h5 class="text-center">${board.description}</h5>`;
   domString += '<div class="btnContainer">';
-  domString += `<button type="button" id="pins-${board.id}" class="btn btn-outline-danger d-flex mr-auto mb-0 see-pins">View Pins</button>`;
+  domString += `<button type="button" id="pins-${board.id}" class="btn btn-outline-danger d-flex mr-auto mb-0 pinsView">View Pins</button>`;
   domString += `<button id="delete-${board.id}" class="btn btn-danger d-flex ml-auto delete-board"><i class="fas fa-trash-alt"></i></button>`;
   domString += '</div>';
   domString += '</div>';
