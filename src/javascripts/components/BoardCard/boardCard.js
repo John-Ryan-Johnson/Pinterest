@@ -4,7 +4,7 @@ const buildBoards = (board) => {
   let domString = '';
   domString += '<div class="row">';
   domString += '<div class="col">';
-  domString += `<div class="card board-card m-5" id="pins${board.id}" >`;
+  domString += `<div class="card board-card m-5" id="${board.id}">`;
   domString += `<h4 class="card-header text-center text-white bg-danger">${board.name}</h4>`;
   domString += ` <img src="${board.imgUrl}" class="cardImg" height="400px" width= "400px" alt="..."></h4>`;
   domString += '<div class="card-body">';
