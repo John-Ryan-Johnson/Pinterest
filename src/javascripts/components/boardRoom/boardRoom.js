@@ -2,14 +2,14 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import boardsData from '../../helpers/data/boardsData';
 import boardCard from '../BoardCard/boardCard';
-import pins from '../pins/pins';
+import singleBoard from '../singleBoard/singleBoard';
 import pinsData from '../../helpers/data/pinsData';
 import utils from '../../helpers/utils';
 import './boardRoom.scss';
 
 const showPins = (e) => {
   const boardId = e.target.id.split('pins-')[1];
-  pins.printPins(boardId);
+  singleBoard.printPins(boardId);
   $('#boards').html('');
 };
 
