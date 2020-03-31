@@ -18,11 +18,12 @@ const checkLoginStatus = () => {
       singleBoardView.removeClass('hide');
       logoutButton.removeClass('hide');
       authDiv.addClass('hide');
-      boardRoom.buildBoardRoom(user.uid);
+      boardRoom.buildBoardRoom();
     } else {
       authDiv.removeClass('hide');
       homeDiv.removeClass('hide');
       boardsDiv.addClass('hide');
+      singleBoardView.addClass('hide');
       logoutButton.addClass('hide');
       home.homeMaker();
     }
