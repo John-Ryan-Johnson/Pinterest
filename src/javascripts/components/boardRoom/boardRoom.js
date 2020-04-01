@@ -18,7 +18,7 @@ const deleteABoard = (e) => {
   const boardId = e.target.closest('.card').id;
   boardsData.deleteBoard(boardId)
     .then(() => {
-      pinsData.getPins(boardId)
+      pinsData.getPinsByBoardId(boardId)
         .then((thesePins) => {
           thesePins.forEach((pin) => {
             pinsData.deletePin(pin.id);
@@ -32,7 +32,7 @@ const deleteABoard = (e) => {
 
 const buildBoardRoom = () => {
   const { uid } = firebase.auth().currentUser;
-  boardsData.getBoards(uid)
+  boardsData.getBoardsByUid(uid)
     .then((boards) => {
       let domString = '';
       domString += '<h1 class="title text-center text-white mt-3">My Boards</h1>';

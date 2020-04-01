@@ -15,7 +15,7 @@ const deleteAPin = (e) => {
 };
 
 const printPins = (boardId) => {
-  pinsData.getPins(boardId)
+  pinsData.getPinsByBoardId(boardId)
     .then((pins) => {
       let domString = '';
       domString = '<h1 class="pinTitle text-center text-white mt-3">My Pins</h1>';
