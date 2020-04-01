@@ -1,8 +1,18 @@
 import pinsData from '../../helpers/data/pinsData';
 import pinCard from '../PinCard/pinCard';
 import utils from '../../helpers/utils';
-import './singleBoard.scss';
+import './singleBoardRoom.scss';
 
+const deleteAPin = (e) => {
+  const pinId = e.target.closest('.card').id;
+  const boardId = e.target.closest('.board-id').id;
+  pinsData.deletePin(pinId)
+    .then(() => {
+      // eslint-disable-next-line no-use-before-define
+      printPins(boardId);
+    })
+    .catch((err) => console.error('Delete pin broke', err));
+};
 
 const printPins = (boardId) => {
   pinsData.getPins(boardId)
@@ -16,6 +26,7 @@ const printPins = (boardId) => {
       });
       domString += '</div>';
       utils.printToDom('single-board', domString);
+      $('body').on('click', '.delete-pin', deleteAPin);
     })
     .catch((err) => console.error('Pins not working', err));
 };
