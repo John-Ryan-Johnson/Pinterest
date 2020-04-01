@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import boardsData from '../../helpers/data/boardsData';
 import boardCard from '../BoardCard/boardCard';
-import singleBoard from '../singleBoard/singleBoard';
+import singleBoard from '../singleBoardRoom/singleBoardRoom';
 import pinsData from '../../helpers/data/pinsData';
 import utils from '../../helpers/utils';
 import './boardRoom.scss';
