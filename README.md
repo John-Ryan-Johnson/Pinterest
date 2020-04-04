@@ -16,17 +16,27 @@ This is a clone of the Pinterest app that allow susers to save images and pin th
 # Screenshots
 
 Page load display:
-![Pinterest1](https://user-images.githubusercontent.com/51214463/68078313-b7fec580-fda1-11e9-998b-76136c82f5af.PNG)
-
-
+![Pinterest-logged-out](https://user-images.githubusercontent.com/51214463/78462987-4f43ae00-769d-11ea-867c-776639f64be6.PNG)
 
 
 Logged in display:
-![Pinterest2](https://user-images.githubusercontent.com/51214463/68078315-bdf4a680-fda1-11e9-8100-d3e6e6fef824.PNG)
+![Pinterest-logged-in](https://user-images.githubusercontent.com/51214463/78463000-7c905c00-769d-11ea-973d-032ffff50c18.PNG)
+
+
+Single Board View:
+![Pinterest-single-board-view](https://user-images.githubusercontent.com/51214463/78463007-9e89de80-769d-11ea-89e1-61f44b0b7f48.PNG)
+
+
+Delete Board:
+![Pinterest-delete-board](https://user-images.githubusercontent.com/51214463/78463022-caa55f80-769d-11ea-9c18-9d5eb34575d5.PNG)
+
+
+Delete Single Pin:
+![Pinterest-delete-single-pin](https://user-images.githubusercontent.com/51214463/78463041-fcb6c180-769d-11ea-97d0-2bea29bef940.PNG)
 
 
 
-
+[Pinterest](https://pinterest-c0dcf.firebaseapp.com/)
 
 
 # How to run
