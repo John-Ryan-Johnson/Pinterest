@@ -41,11 +41,20 @@ const addABoard = (e) => {
   };
   boardsData.addBoard(newBoard)
     .then(() => {
-      $('#exampleModal').modal('hide');
       // eslint-disable-next-line no-use-before-define
-      buildBoardRoom(uid);
+      buildBoardRoom();
     })
     .catch((error) => console.error(error));
+};
+
+const boardEvents = () => {
+  $('#add-board-button').click(() => {
+    $('#exampleModal').show();
+  });
+  $('#close-modal').click(() => {
+    $('#exampleModal').hide();
+    $('#exampleModal').trigger('reset');
+  });
 };
 
 const buildBoardRoom = () => {
@@ -54,7 +63,7 @@ const buildBoardRoom = () => {
     .then((boards) => {
       let domString = '';
       domString += '<h1 class="title text-center text-white mt-3">My Boards</h1>';
-      domString += '<button type="button" class="btn btn-success" id="add-board-button" data-toggle="modal" data-target="#exampleModal">Add Board</button>';
+      domString += '<button type="button" class="btn btn-danger ml-5" id="add-board-button" data-toggle="modal" data-target="#exampleModal">Add Board</button>';
       domString += '<div class="d-flex flex-wrap justify-content-center">';
       boards.forEach((board) => {
         domString += boardCard.buildBoards(board);
@@ -64,6 +73,7 @@ const buildBoardRoom = () => {
       $('body').on('click', '.pinsView', showPins);
       $('body').on('click', '.delete-board', deleteABoard);
       $('#add-new-board').click(addABoard);
+      boardEvents();
     })
     .catch((err) => console.error(err));
 };
