@@ -18,7 +18,7 @@ const checkLoginStatus = () => {
       singleBoardView.removeClass('hide');
       logoutButton.removeClass('hide');
       authDiv.addClass('hide');
-      boardRoom.buildBoardRoom();
+      boardRoom.buildBoardRoom(user.uid);
     } else {
       authDiv.removeClass('hide');
       homeDiv.removeClass('hide');

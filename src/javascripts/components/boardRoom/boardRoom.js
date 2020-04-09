@@ -30,12 +30,31 @@ const deleteABoard = (e) => {
     });
 };
 
+const addABoard = (e) => {
+  e.preventDefault();
+  const { uid } = firebase.auth().currentUser;
+  const newBoard = {
+    name: $('#board-name').val(),
+    description: $('#board-description').val(),
+    imgUrl: $('#board-image-url').val(),
+    uid,
+  };
+  boardsData.addBoard(newBoard)
+    .then(() => {
+      $('#exampleModal').modal('hide');
+      // eslint-disable-next-line no-use-before-define
+      buildBoardRoom(uid);
+    })
+    .catch((error) => console.error(error));
+};
+
 const buildBoardRoom = () => {
   const { uid } = firebase.auth().currentUser;
   boardsData.getBoardsByUid(uid)
     .then((boards) => {
       let domString = '';
       domString += '<h1 class="title text-center text-white mt-3">My Boards</h1>';
+      domString += '<button type="button" class="btn btn-success" id="add-board-button" data-toggle="modal" data-target="#exampleModal">Add Board</button>';
       domString += '<div class="d-flex flex-wrap justify-content-center">';
       boards.forEach((board) => {
         domString += boardCard.buildBoards(board);
@@ -44,8 +63,9 @@ const buildBoardRoom = () => {
       utils.printToDom('boards', domString);
       $('body').on('click', '.pinsView', showPins);
       $('body').on('click', '.delete-board', deleteABoard);
+      $('#add-new-board').click(addABoard);
     })
     .catch((err) => console.error(err));
 };
 
-export default { buildBoardRoom };
+export default { buildBoardRoom, addABoard };
