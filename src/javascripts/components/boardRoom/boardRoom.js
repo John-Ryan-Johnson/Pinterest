@@ -49,11 +49,11 @@ const addABoard = (e) => {
 
 const boardEvents = () => {
   $('#add-board-button').click(() => {
-    $('#exampleModal').show();
+    $('#boardModal').show();
   });
-  $('#close-modal').click(() => {
-    $('#exampleModal').hide();
-    $('#exampleModal').trigger('reset');
+  $('#close-board-modal').click(() => {
+    $('#boardModal').hide();
+    $('#boardModal').trigger('reset');
   });
 };
 
