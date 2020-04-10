@@ -36,7 +36,7 @@ const pinEvents = () => {
   });
   $('#close-pin-modal').click(() => {
     $('#pinModal').hide();
-    $('#pinModal').trigger('reset');
+    $('.modal-body input').val('');
   });
 };
 
