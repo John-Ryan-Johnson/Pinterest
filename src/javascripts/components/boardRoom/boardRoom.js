@@ -53,7 +53,7 @@ const boardEvents = () => {
   });
   $('#close-board-modal').click(() => {
     $('#boardModal').hide();
-    $('#boardModal').trigger('reset');
+    $('.modal-body input').val('');
   });
 };
 
