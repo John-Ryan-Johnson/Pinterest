@@ -30,12 +30,21 @@ const addAPin = (e) => {
     .catch((error) => console.error(error));
 };
 
-const pinEvents = () => {
+const addPinModalEvents = () => {
   $('#add-pin-button').click(() => {
     $('#pinModal').show();
   });
   $('#close-pin-modal').click(() => {
     $('#pinModal').hide();
+  });
+};
+
+const movePinModalEvents = () => {
+  $('.update-pin-button').click(() => {
+    $('#update-pin-modal').show();
+  });
+  $('#close-updatedPin-modal').click(() => {
+    $('#update-pin-modal').hide();
     $('.modal-body input').val('');
   });
 };
@@ -55,9 +64,13 @@ const printPins = (boardId) => {
       utils.printToDom('single-board', domString);
       $('body').on('click', '.delete-pin', deleteAPin);
       $('#add-new-pin').click(addAPin);
-      pinEvents();
+      addPinModalEvents();
+      movePinModalEvents();
     })
     .catch((err) => console.error('Pins not working', err));
 };
 
-export default { printPins, addAPin };
+export default {
+  printPins,
+  addAPin,
+};

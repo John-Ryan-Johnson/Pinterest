@@ -7,6 +7,7 @@ const buildPins = (pin) => {
   domString += `<div class="card pinCard mt-5 mb-5" id="${pin.id}">`;
   domString += `<div class="board-id" id="${pin.boardId}">`;
   domString += '<button class="btn btn-danger btn-circle btn-sm d-flex ml-auto delete-pin"><i class="fas fa-skull"></i></button>';
+  domString += `<button type="button" class="btn btn-danger btn-sm d-flex mr-auto update-pin-button" id="update-${pin.id}" data-toggle="modal" data-target="#update-pin-modal">Move Pin</button>`;
   domString += `<img src="${pin.imageUrl}" class="cardImg" height="400px" width= "400px" alt="...">`;
   domString += '</div>';
   domString += '</div>';
