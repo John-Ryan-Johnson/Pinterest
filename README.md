@@ -1,8 +1,8 @@
-# Pinterest
+# Pinteresting Quotes
 
 # Description
 
-This is a clone of the Pinterest app that allow susers to save images and pin them to various boards.
+This is a clone of the Pinterest app that allows users to create boards of their favorite images and to pin their favorite quotes to their boards. A user can also delete their boards or pins and move pins to a different board.
 
 # Technologies Used
 
@@ -33,6 +33,18 @@ Delete Board:
 
 Delete Single Pin:
 ![Pinterest-delete-single-pin](https://user-images.githubusercontent.com/51214463/78463041-fcb6c180-769d-11ea-97d0-2bea29bef940.PNG)
+
+
+Create Board:
+![Pinterest-create-board](https://user-images.githubusercontent.com/51214463/79075403-3a2bd800-7cb8-11ea-8eae-23cb89c0d37c.PNG)
+
+
+Create Pin:
+![Pinterest-create-pin](https://user-images.githubusercontent.com/51214463/79075405-3ef08c00-7cb8-11ea-98a2-0fa70da9bf56.PNG)
+
+
+Update Pin:
+![Pinterest-update-pin](https://user-images.githubusercontent.com/51214463/79075407-42841300-7cb8-11ea-90e6-39a8d2102207.PNG)
 
 
 
