@@ -1,3 +1,6 @@
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import boardsData from '../../helpers/data/boardsData';
 import pinsData from '../../helpers/data/pinsData';
 import pinCard from '../PinCard/pinCard';
 import utils from '../../helpers/utils';
@@ -13,6 +16,44 @@ const deleteAPin = (e) => {
     })
     .catch((err) => console.error('Delete pin broke', err));
 };
+
+const createPinModalRadios = (e) => {
+  const pinId = e.target.id.split('update-')[1];
+  const { uid } = firebase.auth().currentUser;
+  boardsData.getBoardsByUid(uid)
+    .then((boards) => {
+      let domString = '';
+      boards.forEach((board) => {
+        domString += `<div class="pin-radios">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="${board.name}-radio" value="${board.id}">
+        <label class="form-check-label" for="exampleRadios1">
+          ${board.name}
+          </label>
+          </div>`;
+      });
+      utils.printToDom('board-update-radios', domString);
+    });
+  $('.update-pin').attr('id', pinId);
+};
+
+const moveAPin = (e) => {
+  e.preventDefault();
+  const pinId = e.target.id;
+  const selectedBoard = $('input:checked').val();
+  pinsData.getPinById(pinId)
+    .then((response) => {
+      const selectedPin = response.data;
+      const newPin = {
+        name: selectedPin.name,
+        imageUrl: selectedPin.imageUrl,
+        boardId: `${selectedBoard}`,
+        pinId: `${pinId}`,
+      };
+      pinsData.updatePin(pinId, newPin);
+    })
+    .catch((error) => console.error(error));
+};
+
 
 const addAPin = (e) => {
   e.stopImmediatePropagation();
@@ -36,16 +77,19 @@ const addPinModalEvents = () => {
   });
   $('#close-pin-modal').click(() => {
     $('#pinModal').hide();
+    $('.modal-body input').val('');
   });
 };
 
 const movePinModalEvents = () => {
+  const boardId = $('.pin')[0].id;
   $('.update-pin-button').click(() => {
     $('#update-pin-modal').show();
   });
   $('#close-updatedPin-modal').click(() => {
     $('#update-pin-modal').hide();
-    $('.modal-body input').val('');
+    // eslint-disable-next-line no-use-before-define
+    printPins(boardId);
   });
 };
 
@@ -63,7 +107,9 @@ const printPins = (boardId) => {
       domString += '</div>';
       utils.printToDom('single-board', domString);
       $('body').on('click', '.delete-pin', deleteAPin);
+      $('.update-pin-button').click(createPinModalRadios);
       $('#add-new-pin').click(addAPin);
+      $('.update-pin').click(moveAPin);
       addPinModalEvents();
       movePinModalEvents();
     })
