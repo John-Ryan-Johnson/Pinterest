@@ -31,7 +31,7 @@ const deleteABoard = (e) => {
 };
 
 const addABoard = (e) => {
-  e.preventDefault();
+  e.stopImmediatePropagation();
   const { uid } = firebase.auth().currentUser;
   const newBoard = {
     name: $('#board-name').val(),
